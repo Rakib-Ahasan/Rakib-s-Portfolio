@@ -5,6 +5,10 @@ node_modules/
 dist/
 .astro/
 
+# Build output
+bin/
+obj/
+
 # Environment
 .env
 .env.production
