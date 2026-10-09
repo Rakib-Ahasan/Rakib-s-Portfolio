@@ -1,0 +1,7 @@
+---
+const { metrics } = Astro.props;
+---
+<section id="impact" class="section" data-reveal><div class="container"><div class="section-heading"><div class="eyebrow">01 / measurable impact</div><h2>Numbers that survived production.</h2><p>Performance work is only useful when the system, team, and customers feel the difference.</p></div><div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{metrics.map((metric, index) => <article class={`card card-hover p-6 ${index === 0 ? 'lg:col-span-2' : ''}`}><div class="mono text-4xl font-medium tracking-[-.06em] text-[var(--accent)] md:text-5xl" data-count={metric.value}>{metric.value}</div><h3 class="mt-5 font-semibold">{metric.label}</h3><p class="mono mt-1 text-xs text-[var(--muted)]">{metric.detail}</p></article>)}</div></div></section>
+<script is:inline>
+  document.querySelectorAll('[data-count]').forEach((element) => { const value = element.textContent || ''; element.setAttribute('aria-label', value); });
+</script>

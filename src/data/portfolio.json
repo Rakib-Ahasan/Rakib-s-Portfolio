@@ -1,0 +1,132 @@
+{
+  "profile": {
+    "name": "Md. Rakib Ahasan",
+    "title": "Senior .NET Backend Engineer | Fintech & Enterprise",
+    "tagline": "I build and scale fintech and enterprise backends that stay fast and reliable under real-world load.",
+    "summary": "Senior .NET backend engineer with 5+ years building and scaling fintech and enterprise platforms. Strong in ASP.NET Core, C#, SQL Server, Dapper, Redis, REST APIs, microservices, and Azure DevOps CI/CD, with proven work across payment systems, performance tuning, and zero-downtime migration.",
+    "location": "Bangladesh",
+    "timezone": "UTC+6",
+    "openTo": "Open to remote / relocation",
+    "email": "bd.rakibahasan@gmail.com",
+    "phone": "+880 1770 637360",
+    "linkedin": "https://linkedin.com/in/rakib-ahasan",
+    "github": "https://github.com/Rakib-Ahasan",
+    "cvPath": "/cv.pdf",
+    "photoPath": "/media/profile.jpg"
+  },
+  "metrics": [
+    { "value": "~90%", "label": "Faster high-traffic API", "detail": "110s → 9–13s" },
+    { "value": "99.9%", "label": "Production uptime", "detail": "50M+ users" },
+    { "value": "500 GB+", "label": "Zero-downtime migration", "detail": "<2h cutover" },
+    { "value": "40h → 2h", "label": "Monthly reconciliation", "detail": "Automated reporting" },
+    { "value": "4h → 30m", "label": "Deployment cycle", "detail": "Reporting pipelines" },
+    { "value": "3×", "label": "Peak throughput", "detail": "Same infrastructure" }
+  ],
+  "flow": [
+    { "name": "Client", "short": "01", "detail": "Clear contracts, predictable payloads, and fast feedback at the edge." },
+    { "name": "API", "short": "02", "detail": "ASP.NET Core endpoints shaped around the real workload and failure modes." },
+    { "name": "Cache", "short": "03", "detail": "Redis and in-memory caching where repeated reads justify the complexity." },
+    { "name": "Dapper / SQL", "short": "04", "detail": "Indexes, query plans, and data access tuned against production-shaped queries." },
+    { "name": "Response", "short": "05", "detail": "Observable, resilient responses with useful latency and error boundaries." }
+  ],
+  "experience": [
+    {
+      "role": "Software Engineer — Backend",
+      "company": "JustGo Technologies Limited",
+      "period": "Apr 2026 — Present",
+      "context": "Sports membership and club-management platform · .NET 9, SQL Server, Dapper",
+      "bullets": [
+        "Cut a high-traffic grid API from ~110s to 9–13s through query-level tuning and caching.",
+        "Integrated Adyen ACH, BACS, SEPA Direct Debit, and PayTo with merchant-account and API-key resolution across four regions.",
+        "Delivered Member, Venue, Invoice, and Payment modules in a modular .NET architecture with xUnit coverage for critical workflows."
+      ]
+    },
+    {
+      "role": "Software Engineer — promoted from Software Developer",
+      "company": "DataSoft Systems — Client: bKash",
+      "period": "Jan 2025 — Mar 2026",
+      "context": "Mission-critical .NET Core applications for 50M+ users",
+      "bullets": [
+        "Led a zero-downtime SQL Server → MySQL migration of 500 GB+ with a sub-2-hour cutover and rollback planning.",
+        "Sustained 99.9% production uptime for 50M+ users through systematic incident and performance analysis.",
+        "Automated Excel/PDF reporting with ASP.NET Core and Jenkins CI/CD, cutting deployment time from 4 hours to 30 minutes."
+      ]
+    },
+    {
+      "role": "Software Developer",
+      "company": "DataSoft Systems Bangladesh Ltd.",
+      "period": "Jan 2022 — Dec 2024",
+      "context": "Internal enterprise tooling",
+      "bullets": [
+        "Delivered operational tools with ASP.NET Core and Blazor to improve business-process visibility.",
+        "Optimized SQL queries and stored procedures, cutting report generation from 10 minutes to under 2.",
+        "Built secure REST APIs with JWT authentication handling 10K+ daily requests at under 200 ms average response time."
+      ]
+    },
+    {
+      "role": "Freelance Software Developer",
+      "company": "Self-employed · Remote",
+      "period": "2021",
+      "context": "Contract backend work",
+      "bullets": [
+        "Delivered ASP.NET / C# backend work, SQL Server schema design, API development, and bug-fix contracts."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "slug": "bkash-isms",
+      "title": "bKash Integrated Sales Management System",
+      "status": "Delivered",
+      "problem": "A nationwide sales platform needed to absorb 3× peak transaction volume while manual reconciliation delayed compliance reporting.",
+      "approach": "Profiled high-traffic paths, applied targeted indexing and query-plan optimization, and replaced manual reconciliation with an automated compliance report.",
+      "result": "3× peak volume on the same infrastructure and a 40-hour monthly reconciliation reduced to a 2-hour automated run.",
+      "role": "Backend engineering · performance and reporting",
+      "tech": [".NET Core", "SQL Server", "MySQL", "Dapper"],
+      "media": [],
+      "links": {}
+    },
+    {
+      "slug": "justgo-platform",
+      "title": "JustGo Membership & Payments Platform",
+      "status": "Delivered",
+      "problem": "An enterprise sports platform needed one backend for membership, booking, venue, invoicing, and multi-region payments.",
+      "approach": "Built modular REST APIs and integrated Adyen ACH, BACS, SEPA, and PayTo with cart/store-based merchant and API-key resolution.",
+      "result": "A single API powers web and mobile clients across four regions; one hot grid endpoint improved from ~110s to 9–13s.",
+      "role": "Backend engineering · payments and performance",
+      "tech": [".NET 9", "SQL Server", "Dapper", "Adyen"],
+      "media": [],
+      "links": {}
+    },
+    {
+      "slug": "edunest",
+      "title": "EduNest",
+      "status": "In progress",
+      "problem": "A multi-tenant education product is being developed with tenant-aware backend boundaries.",
+      "approach": "Architecture and implementation are in progress; details will be shared as the product matures.",
+      "result": "In progress.",
+      "role": "Backend engineering",
+      "tech": [".NET", "Multi-tenant architecture"],
+      "media": [],
+      "links": {}
+    }
+  ],
+  "skills": [
+    { "group": "Backend", "items": ["C#", "ASP.NET Core", ".NET", "REST API design", "Dapper", "EF Core", "LINQ", "SignalR"] },
+    { "group": "Frontend", "items": ["Blazor", "React", "Angular", "HTML", "CSS", "TypeScript"] },
+    { "group": "Architecture", "items": ["Clean Architecture", "CQRS", "Microservices", "SOLID", "Design patterns", "Modular monoliths"] },
+    { "group": "Databases & Caching", "items": ["SQL Server", "MySQL", "PostgreSQL", "Redis", "Query optimization", "Indexing", "Stored procedures"] },
+    { "group": "Cloud & DevOps", "items": ["Azure", "Azure DevOps", "Docker", "Jenkins", "CI/CD", "Git"] },
+    { "group": "Security & Payments", "items": ["JWT", "RBAC", "AES-256", "Adyen", "ACH", "BACS", "SEPA", "PayTo"] },
+    { "group": "Testing & AI-assisted development", "items": ["xUnit", "Unit testing", "GitHub Copilot", "AI pair-programming"] }
+  ],
+  "education": {
+    "degree": "B.Sc. in Computer Science and Engineering",
+    "institution": "Royal University of Dhaka"
+  },
+  "certifications": [],
+  "contact": {
+    "formspreeId": "",
+    "replyNote": "Typically replies within 24h"
+  }
+}
