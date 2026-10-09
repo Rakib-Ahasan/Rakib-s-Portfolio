@@ -79,3 +79,19 @@ body::after {
 @media (max-width: 640px) { .container { width: min(calc(100% - 1.25rem), var(--max)); } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } [data-reveal] { opacity: 1; transform: none; } }
 @media print { body::before, body::after, nav, button, .no-print { display: none !important; } body { background: white; color: #111; font-size: 11pt; } .section { padding-block: 1rem; break-inside: avoid; } .card { border-color: #bbb; } a { text-decoration: none; } }
+
+/* Offset Tawk.to widget above WhatsApp button (avoid overlap) */
+#tawk-bubble-container,
+.tawk-min-container {
+  bottom: 96px !important;
+  right: 20px !important;
+  z-index: 40 !important;
+}
+
+@media (max-width: 768px) {
+  #tawk-bubble-container,
+  .tawk-min-container {
+    bottom: 88px !important;
+    right: 16px !important;
+  }
+}
