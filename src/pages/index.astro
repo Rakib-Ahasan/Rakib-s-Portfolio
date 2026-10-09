@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
+import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
 import Impact from '../components/Impact.astro';
 import Flow from '../components/Flow.astro';
@@ -14,7 +14,7 @@ import portfolio from '../data/portfolio.json';
 ---
 
 <Layout>
-  <Nav />
+	<Navigation sections={[{ id: 'top', label: 'Home' }, { id: 'experience', label: 'Experience' }, { id: 'projects', label: 'Projects' }, { id: 'skills', label: 'Skills' }, { id: 'education', label: 'Education' }, { id: 'contact', label: 'Contact' }]} />
   <main id="main">
 	<Hero profile={portfolio.profile} />
 	<Impact metrics={portfolio.metrics} />

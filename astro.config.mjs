@@ -6,5 +6,5 @@ export default defineConfig({
   site: 'https://rakib-ahasan.github.io',
   base: '/Rakib-s-Portfolio/',
   output: 'static',
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind()],
 });

@@ -111,20 +111,26 @@
       "links": {}
     }
   ],
-  "skills": [
-    { "group": "Backend", "items": ["C#", "ASP.NET Core", ".NET", "REST API design", "Dapper", "EF Core", "LINQ", "SignalR"] },
-    { "group": "Frontend", "items": ["Blazor", "React", "Angular", "HTML", "CSS", "TypeScript"] },
-    { "group": "Architecture", "items": ["Clean Architecture", "CQRS", "Microservices", "SOLID", "Design patterns", "Modular monoliths"] },
-    { "group": "Databases & Caching", "items": ["SQL Server", "MySQL", "PostgreSQL", "Redis", "Query optimization", "Indexing", "Stored procedures"] },
-    { "group": "Cloud & DevOps", "items": ["Azure", "Azure DevOps", "Docker", "Jenkins", "CI/CD", "Git"] },
-    { "group": "Security & Payments", "items": ["JWT", "RBAC", "AES-256", "Adyen", "ACH", "BACS", "SEPA", "PayTo"] },
-    { "group": "Testing & AI-assisted development", "items": ["xUnit", "Unit testing", "GitHub Copilot", "AI pair-programming"] }
-  ],
+  "skills": {
+    "Backend": ["C#", "ASP.NET Core (Web API, MVC, Razor Pages)", ".NET 9 / .NET Framework 4.8", "Entity Framework Core", "Dapper", "LINQ", "SignalR", "Python"],
+    "Frontend": ["React.js", "Angular", "Blazor", "JavaScript / TypeScript", "jQuery", "HTML5", "CSS3"],
+    "Architecture": ["Microservices", "Clean Architecture", "CQRS", "RESTful API Design", "Swagger / OpenAPI", "SOLID", "Design Patterns"],
+    "Databases & Caching": ["SQL Server", "MySQL", "PostgreSQL", "Redis", "IMemoryCache / Distributed Caching", "Query Optimization", "Indexing", "Stored Procedures", "Schema Design"],
+    "Cloud & DevOps": ["Azure (App Service, Azure DevOps Pipelines)", "Docker", "Jenkins", "CI/CD", "Git"],
+    "Security & Payments": ["JWT Authentication", "RBAC", "AES-256 Encryption", "Adyen (ACH, BACS, SEPA, PayTo)", "Payment Gateway Integration", "Audit Logging"],
+    "Testing & Practices": ["xUnit", "Unit Testing", "TDD", "Code Review", "Agile / Scrum", "GitHub Copilot & AI-assisted development"]
+  },
   "education": {
     "degree": "B.Sc. in Computer Science and Engineering",
-    "institution": "Royal University of Dhaka"
+    "institution": "Royal University of Dhaka",
+    "cgpa": "3.70 / 4.00 (Top 10% of cohort)",
+    "years": "2015 - 2019"
   },
-  "certifications": [],
+  "certifications": [
+    "Advanced SQL and Database Optimization (2024)",
+    "ASP.NET Core Development — BITM & freeCodeCamp (2018)",
+    "In progress: Microsoft Azure Fundamentals (AZ-900)"
+  ],
   "contact": {
     "formspreeId": "",
     "replyNote": "Typically replies within 24h"
