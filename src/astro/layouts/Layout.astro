@@ -1,0 +1,204 @@
+---
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/700.css';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/700.css';
+
+const canonicalURL = new URL(Href, "https://rakib-ahasan.dev");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Senior .NET Backend Engineer with 7+ years building fintech and enterprise systems. Specializing in ASP.NET Core, SQL Server, Dapper, Clean Architecture, and CQRS." />
+    <meta name="author" content="Md. Rakib Ahasan" />
+    <meta name="keywords" content=".NET, C#, Backend, ASP.NET Core, SQL Server, Dapper, Fintech, Enterprise, Portfolio" />
+    <meta property="og:title" content="Md. Rakib Ahasan — Senior .NET Backend Engineer" />
+    <meta property="og:description" content="Portfolio of Md. Rakib Ahasan, Senior .NET Backend Engineer with 7+ years in fintech and enterprise systems." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rakib-ahasan.dev/" />
+    <meta property="og:image" content="https://rakib-ahasan.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Md. Rakib Ahasan — Senior .NET Backend Engineer" />
+    <meta name="twitter:description" content="Portfolio of Md. Rakib Ahasan, Senior .NET Backend Engineer with 7+ years in fintech and enterprise systems." />
+    <meta name="twitter:image" content="https://rakib-ahasan.dev/og-image.png" />
+    <link rel="canonical" href="{canonicalURL}" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Md. Rakib Ahasan",
+        "jobTitle": "Senior .NET Backend Engineer",
+        "email": "mailto:bd.rakibahasan@gmail.com",
+        "url": "https://rakib-ahasan.dev",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "JustGo Technologies Limited"
+        },
+        "description": "7+ years building fintech and enterprise systems with ASP.NET Core, SQL Server, Dapper, Clean Architecture, and CQRS."
+      }
+    </script>
+    <style is:inline>
+      :root {
+        --accent: #1F4E79;
+        --bg: #ffffff;
+        --bg-secondary: #f8fafc;
+        --text: #0f172a;
+        --text-secondary: #64748b;
+        --border: #e2e8f0;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f172a;
+          --bg-secondary: #1e293b;
+          --text: #f1f5f9;
+          --text-secondary: #94a3b8;
+          --border: #334155;
+        }
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      h1, h2, h3 {
+        font-family: 'Inter', system-ui, sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--text);
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+      }
+      a:hover {
+        opacity: 0.8;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .fade-in {
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        transform: translateY(20px);
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background: rgba(var(--bg), 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+      .nav.scrolled {
+        padding: 0.5rem 0;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      .theme-toggle {
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 0.375rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s ease;
+      }
+      .theme-toggle:hover {
+        background: var(--border);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+    <script is:inline>
+      // Theme initialization and scroll effects
+      document.addEventListener('astro:page-load', () => {
+        // Theme from localStorage or system preference
+        const stored = localStorage.getItem('theme');
+        if (stored) {
+          document.documentElement.setAttribute('data-theme', stored);
+        } else {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        }
+
+        // Scroll effect for navbar
+        const navbar = document.querySelector('.nav');
+        const observerOptions = {
+          root: null,
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              sectionObserver.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(section => {
+          sectionObserver.observe(section);
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+          const currentScroll = window.pageYOffset;
+          if (Math.abs(currentScroll - lastScroll) <= 20) return;
+          
+          if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+          
+          lastScroll = currentScroll;
+        });
+      });
+    </script>
+  </body>
+</html>
