@@ -1,0 +1,4 @@
+---
+const { experience } = Astro.props;
+---
+<section id="experience" class="section" data-reveal><div class="container"><div class="section-heading"><div class="eyebrow">03 / operating history</div><h2>Systems, not job titles.</h2><p>The through-line is backend ownership: understand the constraint, measure the path, ship the smallest durable fix.</p></div><div class="space-y-4">{experience.map((job) => <article class="grid gap-5 border-t border-[var(--line)] py-7 md:grid-cols-[220px_1fr] md:gap-10"><div><div class="mono text-xs text-[var(--accent)]">{job.period}</div><h3 class="mt-2 font-semibold">{job.company}</h3><p class="mt-1 text-sm text-[var(--muted)]">{job.context}</p></div><div><h4 class="text-xl font-semibold tracking-tight">{job.role}</h4><ul class="mt-4 space-y-3 text-[var(--muted)]">{job.bullets.map((bullet) => <li class="flex gap-3"><span class="mono text-[var(--accent)]">→</span><span>{bullet}</span></li>)}</ul></div></article>)}</div></div></section>

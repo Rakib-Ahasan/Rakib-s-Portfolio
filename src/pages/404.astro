@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+<Layout title="404 — route not found" description="This route does not exist on Md. Rakib Ahasan's portfolio.">
+  <main id="main" class="container flex min-h-[70vh] items-center py-20">
+	<div><div class="eyebrow">404 / route not found</div><h1 class="mt-4 text-6xl font-bold tracking-[-.06em]">Nothing here.</h1><p class="mt-5 max-w-lg text-[var(--muted)]">The route you requested is not part of this system. Return to the console and pick another path.</p><a class="mt-8 inline-flex rounded-lg bg-[var(--accent)] px-5 py-3 font-semibold text-[var(--bg)]" href={base}>Return home →</a></div>
+  </main>
+</Layout>

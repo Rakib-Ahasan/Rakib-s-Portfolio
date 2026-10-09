@@ -1,11 +1,10 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
-// Project-page deploy: https://rakib-ahasan.github.io/RakibPortfolio/
-// For a custom domain, set `site` to the domain and `base` to '/'.
 export default defineConfig({
   site: 'https://rakib-ahasan.github.io',
-  base: '/RakibPortfolio',
+  base: '/Rakib-s-Portfolio/',
   output: 'static',
-  integrations: [tailwind()],
+  integrations: [tailwind(), sitemap()],
 });

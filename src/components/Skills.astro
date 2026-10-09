@@ -1,0 +1,4 @@
+---
+const { skills } = Astro.props;
+---
+<section id="skills" class="section" data-reveal><div class="container"><div class="section-heading"><div class="eyebrow">05 / toolkit</div><h2>Tools I reach for deliberately.</h2><p>No progress bars. Context, constraints, and the right abstraction beat a decorative percentage.</p></div><div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{skills.map((skill) => <article class="card p-5"><h3 class="mono text-xs uppercase tracking-wider text-[var(--accent)]">{skill.group}</h3><div class="mt-4 flex flex-wrap gap-2">{skill.items.map((item) => <span class="rounded-md border border-[var(--line)] px-2.5 py-1.5 text-sm text-[var(--muted)]">{item}</span>)}</div></article>)}</div></div></section>

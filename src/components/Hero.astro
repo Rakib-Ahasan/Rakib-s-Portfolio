@@ -1,0 +1,29 @@
+---
+const { profile } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<section id="top" class="relative overflow-hidden border-b border-[var(--line)] py-20 md:py-28" data-reveal>
+  <div class="pointer-events-none absolute -top-40 right-0 h-[30rem] w-[30rem] rounded-full bg-[var(--accent)] opacity-[.08] blur-[100px]"></div>
+  <div class="container grid items-center gap-14 lg:grid-cols-[1.15fr_.85fr]">
+	<div>
+	  <div class="eyebrow mb-6"><span class="mr-2 inline-block h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]"></span>{profile.openTo}</div>
+	  <h1 class="max-w-4xl text-5xl font-bold leading-[.98] tracking-[-.06em] md:text-7xl">{profile.name}</h1>
+	  <p class="mono mt-6 text-lg text-[var(--accent)] md:text-xl">{profile.title}</p>
+	  <p class="mt-6 max-w-2xl text-xl leading-relaxed text-[var(--muted)]">{profile.tagline}</p>
+	  <div class="mt-9 flex flex-wrap gap-3">
+		<a class="rounded-lg bg-[var(--accent)] px-5 py-3 font-semibold text-[var(--bg)] transition hover:-translate-y-0.5" href="#contact">Contact me</a>
+		<a class="rounded-lg border border-[var(--line-strong)] px-5 py-3 font-semibold text-[var(--text)] transition hover:-translate-y-0.5 hover:bg-[var(--accent-soft)]" href={`${base}cv.pdf`} download>Download CV</a>
+		<a class="rounded-lg border border-[var(--line)] px-5 py-3 text-[var(--muted)] transition hover:border-[var(--line-strong)] hover:text-[var(--accent)]" href={profile.github} target="_blank" rel="noreferrer">GitHub ↗</a>
+		<a class="rounded-lg border border-[var(--line)] px-5 py-3 text-[var(--muted)] transition hover:border-[var(--line-strong)] hover:text-[var(--accent)]" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+	  </div>
+	</div>
+	<div class="terminal-window card relative overflow-hidden p-1 shadow-[0_0_80px_var(--accent-soft)]">
+	  <div class="flex items-center gap-2 border-b border-[var(--line)] px-4 py-3"><i class="h-2.5 w-2.5 rounded-full bg-[#ff6b6b]"></i><i class="h-2.5 w-2.5 rounded-full bg-[#ffd166]"></i><i class="h-2.5 w-2.5 rounded-full bg-[#06d6a0]"></i><span class="mono ml-3 text-xs text-[var(--faint)]">rakib.cs</span></div>
+	  <div class="flex aspect-square items-center justify-center bg-[radial-gradient(circle_at_50%_35%,var(--accent-soft),transparent_55%)] p-8">
+		<img src={`${base}media/profile.jpg`} alt="Portrait of Md. Rakib Ahasan" class="profile-photo h-full w-full rounded-lg object-cover" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+		<div class="hidden h-full w-full items-center justify-center rounded-lg border border-[var(--line-strong)] bg-[var(--surface-strong)] text-7xl font-bold text-[var(--accent)]" aria-label="RA initials avatar">RA</div>
+	  </div>
+	  <div class="mono flex justify-between border-t border-[var(--line)] px-4 py-3 text-xs text-[var(--faint)]"><span>status: shipping</span><span>UTC+6</span></div>
+	</div>
+  </div>
+</section>
