@@ -1,0 +1,9 @@
+<div id="@SectionId" class="section-wrapper visible">
+    @ChildContent
+</div>
+
+@code {
+    [Parameter] public string SectionId { get; set; } = string.Empty;
+
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

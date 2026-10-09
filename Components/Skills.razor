@@ -1,0 +1,56 @@
+<div class="py-24 lg:py-32 bg-[#101028]">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 tracking-title">Skills</h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            @foreach (var skill in Portfolio.Skills.Backend)
+            {
+                <span class="skill-tag inline-block px-3 py-1 rounded text-xs font-medium bg-[#1a1a3e] text-[#80a0d0] mb-1">
+                    @skill
+                </span>
+            }
+            @foreach (var skill in Portfolio.Skills.Frontend)
+            {
+                <span class="skill-tag inline-block px-3 py-1 rounded text-xs font-medium bg-[#1a1a3e] text-[#80a0d0] mb-1">
+                    @skill
+                </span>
+            }
+            @foreach (var skill in Portfolio.Skills.Architecture)
+            {
+                <span class="skill-tag inline-block px-3 py-1 rounded text-xs font-medium bg-[#1a1a3e] text-[#80a0d0] mb-1">
+                    @skill
+                </span>
+            }
+            @foreach (var skill in Portfolio.Skills.DatabasesAndCaching)
+            {
+                <span class="skill-tag inline-block px-3 py-1 rounded text-xs font-medium bg-[#1a1a3e] text-[#80a0d0] mb-1">
+                    @skill
+                </span>
+            }
+            @foreach (var skill in Portfolio.Skills.CloudAndDevOps)
+            {
+                <span class="skill-tag inline-block px-3 py-1 rounded text-xs font-medium bg-[#1a1a3e] text-[#80a0d0] mb-1">
+                    @skill
+                </span>
+            }
+            @foreach (var skill in Portfolio.Skills.SecurityAndPayments)
+            {
+                <span class="skill-tag inline-block px-3 py-1 rounded text-xs font-medium bg-[#1a1a3e] text-[#80a0d0] mb-1">
+                    @skill
+                </span>
+            }
+            @foreach (var skill in Portfolio.Skills.TestingAndPractices)
+            {
+                <span class="skill-tag inline-block px-3 py-1 rounded text-xs font-medium bg-[#1a1a3e] text-[#80a0d0] mb-1">
+                    @skill
+                </span>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    [Inject] IPortfolioService PortfolioService { get; set; } = default!;
+    private Models.PortfolioData Portfolio => _portfolio ??= PortfolioService.GetPortfolioDataAsync().Result;
+    private Models.PortfolioData? _portfolio;
+}

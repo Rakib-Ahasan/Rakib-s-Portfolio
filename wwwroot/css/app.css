@@ -1,0 +1,151 @@
+/* =========================================================================
+   RakibPortfolio - Custom Styles (Tailwind CDN is the styling engine)
+   Only non-Tailwind custom styles live here.
+   ========================================================================= */
+
+/* ---- CSS Variables ---- */
+:root[data-theme="dark"] {
+    --bg-primary: #0a0a2e;
+    --bg-secondary: #101028;
+    --bg-tertiary: #15152e;
+    --text-primary: #f0f0f0;
+    --text-secondary: #8080a0;
+    --text-tertiary: #606070;
+    --accent: #06b6d4;
+    --border: #303040;
+    --link: #8080a0;
+}
+
+:root[data-theme="light"] {
+    --bg-primary: #f5f5fc;
+    --bg-secondary: #edeeF7;
+    --bg-tertiary: #ffffff;
+    --text-primary: #1a1a2e;
+    --text-secondary: #5a5a7a;
+    --text-tertiary: #707080;
+    --accent: #06b6d4;
+    --border: #c9c9db;
+    --link: #606080;
+}
+
+/* ---- Base ---- */
+html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ---- Fade-in animation ---- */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+/* ---- Custom scrollbar ---- */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border-radius: 5px;
+    border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* ---- Tailwind button helpers (used by nav) ---- */
+.btn-primary {
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: 2px solid var(--accent);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-outline:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+/* ---- Loading screen ---- */
+.loading-screen,
+.error-screen {
+    font-size: 1.125rem;
+}
+
+/* ---- Theme toggle ---- */
+.theme-toggle,
+.theme-toggle-mobile {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem;
+    backdrop-filter: blur(8px);
+}
+
+.nav-link {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+}
+
+/* ---- Sections ---- */
+.section-wrapper {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Empty states ---- */
+.empty-state svg {
+    color: var(--text-tertiary);
+}

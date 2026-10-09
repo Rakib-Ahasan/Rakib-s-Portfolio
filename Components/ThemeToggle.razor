@@ -1,0 +1,27 @@
+@inject IThemeService Theme
+
+<div class="theme-toggle" @onclick="ToggleTheme">
+    <span class="icon" @class="icon light:@Theme.IsDark dark:!Theme.IsDark">
+        @if (Theme.IsDark)
+        {
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 5.5c2.76 0 5 2.24 5 5s-2.24 5-5 5S7 13.26 7 10.5 9.24 5.5 12 5.5Zm0 11.5c-2.49 0-5-2.01-5-5s2.01-5 5-5 5 2.01 5 5-2.51 5-5 5Z" />
+            </svg>
+        }
+        else
+        {
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2Zm0 2c-3.87 0-7 3.13-7 7s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7Zm-4.34 5.41l1.42 1.42L15.15 12.06l-1.42 1.42L11 8.38l1.42-1.42L8.38 7.07 5.77 9.68 4.35 7.26Z" />
+            </svg>
+        }
+    </span>
+</div>
+
+<div class="toggle-label" @onclick="ToggleTheme">@(Theme.IsDark ? "Light" : "Dark")</div>
+
+@code {
+    protected void ToggleTheme()
+    {
+        _ = Theme.ToggleThemeAsync();
+    }
+}

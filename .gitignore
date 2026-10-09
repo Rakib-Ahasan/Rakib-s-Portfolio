@@ -1,0 +1,17 @@
+## Visual Studio
+.vs/
+*.user
+*.suo
+
+## Build output
+bin/
+obj/
+
+## Generated validation output
+RPBuild*/
+RPObj*/
+ChromeBlazorTest*/
+
+## OS files
+.DS_Store
+Thumbs.db

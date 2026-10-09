@@ -1,0 +1,69 @@
+@page "/"
+@using RakibPortfolio.Models
+@using RakibPortfolio.Components
+
+<PageTitle>Rakib Ahasan - Software Engineer</PageTitle>
+
+@if (_isLoading)
+{
+    <div class="loading-screen text-white bg-[#0a0a2e] min-h-screen flex items-center justify-center">
+        <p class="text-[#8080a0]">Loading...</p>
+    </div>
+}
+else if (_hasError)
+{
+    <div class="error-screen text-white bg-[#0a0a2e] min-h-screen flex items-center justify-center">
+        <div class="text-center px-4">
+            <h2 class="text-2xl font-bold mb-4 text-primary">Oops!</h2>
+            <p class="text-[#8080a0]">Unable to load portfolio content. Please refresh the page.</p>
+            <a href="/" class="mt-4 inline-block px-6 py-3 bg-primary rounded-lg text-white">Refresh</a>
+        </div>
+    </div>
+}
+else
+{
+    <SectionWrapper SectionId="top">
+        <Hero />
+    </SectionWrapper>
+    <SectionWrapper SectionId="about">
+        <About />
+    </SectionWrapper>
+    <SectionWrapper SectionId="experience">
+        <Experience />
+    </SectionWrapper>
+    <SectionWrapper SectionId="skills">
+        <Skills />
+    </SectionWrapper>
+    <SectionWrapper SectionId="projects">
+        <Projects />
+    </SectionWrapper>
+    <SectionWrapper SectionId="writing">
+        <Writing />
+    </SectionWrapper>
+    <SectionWrapper SectionId="contact">
+        <Contact />
+    </SectionWrapper>
+}
+
+@code {
+    [Inject] IPortfolioService Portfolio { get; set; } = default!;
+    private bool _isLoading = true;
+    private bool _hasError;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Trigger the service to load data (we don't need to store it, as components get it themselves)
+            var data = await Portfolio.GetPortfolioDataAsync();
+        }
+        catch
+        {
+            _hasError = true;
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+}

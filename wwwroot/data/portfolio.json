@@ -1,0 +1,184 @@
+{
+  "profile": {
+    "name": "Md. Rakib Ahasan",
+    "title": "Software Engineer | .NET / C# Full-Stack | Fintech & Payments",
+    "location": "Bangladesh (UTC+6)",
+    "openTo": "Remote (US, UK, EU, Canada, Australia) | Relocation with visa sponsorship",
+    "email": "bd.rakibahasan@gmail.com",
+    "phone": "+880 1770 637360",
+    "linkedin": "https://linkedin.com/in/rakib-ahasan",
+    "github": "https://github.com/Rakib-Ahasan",
+    "cvPath": "/assets/Rakib_Ahasan_CV.pdf",
+    "pitch": "I build fintech and enterprise systems that handle millions of users — from 99.9% uptime payment platforms to 500 GB zero-downtime migrations."
+  },
+  "summary": "Full-stack .NET engineer with 5+ years building and scaling fintech and enterprise platforms, including systems for bKash (50M+ users) and JustGo's multi-region payments platform. Strong in ASP.NET Core, C#, SQL Server, REST APIs, microservices, Redis/in-memory caching, and Azure DevOps CI/CD, with frontend experience in React, Angular, Blazor, and jQuery. Proven results in performance tuning (~110s → 9-13s API), zero-downtime data migration (500 GB+), secure payment integrations (Adyen), and mentoring.",
+  "keyResults": [
+    "99.9% uptime (50M+ users)",
+    "500 GB+ zero-downtime DB migration",
+    "~90% API response-time reduction",
+    "70% less manual reporting effort",
+    "Deploy time 4h → 30 min"
+  ],
+  "experience": [
+    {
+      "role": "Software Engineer - Backend",
+      "company": "JustGo Technologies Limited",
+      "duration": "April 2026 - Present",
+      "location": "Dhaka, Bangladesh (Hybrid)",
+      "context": "Sports membership & club-management platform | .NET 9, SQL Server, Dapper",
+      "bullets": [
+        "Delivered backend features across Member Profile, Venue Management, Invoice Management, and Payment modules in a modular .NET architecture.",
+        "Integrated Adyen payment methods (ACH, BACS Direct Debit, SEPA Direct Debit, PayTo) with cart/store-based merchant account and API-key resolution across UK, US, Europe, Australia.",
+        "Optimized high-traffic endpoints through query-level tuning and caching, reducing one grid API from ~110s to 9-13s (~90% faster).",
+        "Built audit logging and observability — profile-level change tracking, receipt-level logs, provider-response analysis.",
+        "Implemented business-critical validation and workflow logic with unit tests (xUnit)."
+      ]
+    },
+    {
+      "role": "Software Engineer (Promoted from Software Developer)",
+      "company": "DataSoft Systems Bangladesh Ltd. (Client: bKash)",
+      "duration": "Jan 2025 - Mar 2026",
+      "location": "Dhaka, Bangladesh",
+      "context": "Mission-critical .NET Core applications for bKash (50M+ users)",
+      "bullets": [
+        "Sustained 99.9% uptime in production for 50M+ users.",
+        "Led zero-downtime SQL Server → MySQL migration of 500 GB+ data with <2-hour cutover window, including full rollback and validation planning.",
+        "Built automated Excel/PDF reporting pipelines with ASP.NET Core and Jenkins CI/CD, cutting manual effort by 70% and deployment time from 4 hours to 30 minutes.",
+        "Resolved escalated production incidents through systematic root-cause analysis, eliminating recurring performance degradation during peak business hours.",
+        "Designed RBAC for 500+ users, AES-256 encryption for sensitive data, and activity audit trails; mentored junior developers on SOLID, code review, and unit testing."
+      ]
+    },
+    {
+      "role": "Software Developer",
+      "company": "DataSoft Systems Bangladesh Ltd.",
+      "duration": "Jan 2022 - Dec 2024",
+      "location": "Dhaka, Bangladesh",
+      "context": "Internal enterprise tools",
+      "bullets": [
+        "Delivered 5+ internal operational tools with ASP.NET Core and Blazor, improving business-process visibility across departments.",
+        "Optimized SQL queries and stored procedures, reducing report generation from 10 minutes to under 2 minutes (80%).",
+        "Built secure RESTful APIs with JWT authentication handling 10K+ daily requests at <200 ms average response time.",
+        "Diagnosed and resolved defects across UI, business logic, and database layers."
+      ]
+    },
+    {
+      "role": "Freelance Software Developer",
+      "company": "Self-Employed (Remote)",
+      "duration": "[ADD DATES]",
+      "location": "Remote",
+      "context": "Contract work",
+      "bullets": [
+        "Delivered ASP.NET / C# backend and SQL Server projects for remote clients, covering API development, schema design, and bug-fix contracts."
+      ]
+    }
+  ],
+  "skills": {
+    "Backend": [
+      "C#",
+      "ASP.NET Core (Web API, MVC, Razor Pages)",
+      ".NET 9 / .NET Framework 4.8",
+      "Entity Framework Core",
+      "Dapper",
+      "LINQ",
+      "SignalR",
+      "Python"
+    ],
+    "Frontend": [
+      "React.js",
+      "Angular",
+      "Blazor",
+      "JavaScript / TypeScript",
+      "jQuery",
+      "HTML5",
+      "CSS3"
+    ],
+    "Architecture": [
+      "Microservices",
+      "Clean Architecture",
+      "CQRS",
+      "RESTful API Design",
+      "Swagger / OpenAPI",
+      "SOLID",
+      "Design Patterns"
+    ],
+    "Databases & Caching": [
+      "SQL Server",
+      "MySQL",
+      "PostgreSQL",
+      "Redis",
+      "IMemoryCache / Distributed Caching",
+      "Query Optimization",
+      "Indexing",
+      "Stored Procedures",
+      "Schema Design"
+    ],
+    "Cloud & DevOps": [
+      "Azure (App Service, Azure DevOps Pipelines)",
+      "Docker",
+      "Jenkins",
+      "CI/CD",
+      "Git"
+    ],
+    "Security & Payments": [
+      "JWT Authentication",
+      "RBAC",
+      "AES-256 Encryption",
+      "Adyen (ACH, BACS, SEPA, PayTo)",
+      "Payment Gateway Integration",
+      "Audit Logging"
+    ],
+    "Testing & Practices": [
+      "xUnit",
+      "Unit Testing",
+      "TDD",
+      "Code Review",
+      "Agile / Scrum",
+      "GitHub Copilot & AI-assisted development"
+    ]
+  },
+  "projects": [
+    {
+      "name": "bKash Integrated Sales Management System (ISMS)",
+      "status": "Delivered",
+      "tech": [".NET Core", "SQL Server", "MySQL", "jQuery"],
+      "problem": "Nationwide sales platform needed to handle 3x peak transaction volume on existing infrastructure.",
+      "solution": "Index and query-plan optimization across high-traffic paths.",
+      "outcome": "Handles 3x peak volume on same infrastructure. Replaced 40-hour monthly manual reconciliation with 2-hour automated compliance report (~450 person-hours saved/year)."
+    },
+    {
+      "name": "JustGo — Sports Membership & Club Management Platform",
+      "status": "Delivered",
+      "tech": [".NET 9 / .NET Framework 4.8.1", "SQL Server", "Dapper"],
+      "problem": "Enterprise needed a modular platform serving web + mobile clients across multiple domains.",
+      "solution": "Modular REST API covering membership, organization, booking, venue, invoice, class, and results domains.",
+      "outcome": "Enterprise-scale platform serving web and mobile clients with multi-region Adyen payment integration."
+    },
+    {
+      "name": "EduNest",
+      "status": "In Progress",
+      "tech": ["Blazor", ".NET 9", "MSSQL", "EF Core", "Redis", "RabbitMQ"],
+      "problem": "Schools need a multi-tenant management system with strict data isolation.",
+      "solution": "Modular monolith with Clean Architecture (Domain, Application, Infrastructure, API layers). Includes payment CSV export with cent-level reconciliation.",
+      "outcome": "[ADD METRIC]"
+    }
+  ],
+  "articles": [],
+  "contact": {
+    "email": "bd.rakibahasan@gmail.com",
+    "linkedin": "https://linkedin.com/in/rakib-ahasan",
+    "github": "https://github.com/Rakib-Ahasan",
+    "phone": "+880 1770 637360",
+    "formspreeEndpoint": "[ADD YOUR FORMSPREE ID]"
+  },
+  "education": {
+    "degree": "B.Sc. in Computer Science and Engineering",
+    "institution": "Royal University of Dhaka",
+    "cgpa": "3.70 / 4.00 (Top 10% of cohort)",
+    "years": "2015 - 2019"
+  },
+  "certifications": [
+    "Advanced SQL and Database Optimization (2024)",
+    "ASP.NET Core Development — BITM & freeCodeCamp (2018)",
+    "In progress: Microsoft Azure Fundamentals (AZ-900)"
+  ]
+}

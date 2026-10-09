@@ -1,0 +1,43 @@
+<div class="py-24 lg:py-32 bg-[#0a0a2e]">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 tracking-title">Experience</h2>
+
+        @foreach (var item in Portfolio.Experience)
+        {
+            <div class="experience-card bg-[#15152e] rounded-xl p-6 mb-8 hover:shadow-lg hover:transition-shadow duration-300">
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold mb-1">@(item.Role)</h3>
+                        <p class="text-[#6090b0] mb-1">@(item.Company)</p>
+                        <p class="text-sm text-[#707080]">@(item.Duration)</p>
+                    </div>
+                    <span class="text-[#38bdf8] text-sm font-medium">@(item.Location)</span>
+                </div>
+
+                <p class="text-base text-[#8080a0] leading-relaxed mb-4">
+                    @(item.Context)
+                </p>
+
+                <ul class="space-y-2 text-sm">
+                    @foreach (var bullet in item.Bullets)
+                    {
+                        <li class="flex items-start">
+                            <span class="icon inline-block text-primary mr-3 flex-shrink-0">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5 3h14v2H5V3zm0 4h14v2H5V7zm0 4h14v2H5v-2zm-5 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2zm11.66-4.4 1.41 1.41L18.17 15H5v-2.17l5.27-5.27 1.42 1.41Z" />
+                                </svg>
+                            </span>
+                            <span>@bullet</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    [Inject] IPortfolioService PortfolioService { get; set; } = default!;
+    private Models.PortfolioData Portfolio => _portfolio ??= PortfolioService.GetPortfolioDataAsync().Result;
+    private Models.PortfolioData? _portfolio;
+}

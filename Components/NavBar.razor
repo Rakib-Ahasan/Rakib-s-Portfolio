@@ -1,0 +1,68 @@
+@inject IThemeService Theme
+
+<div class="navbar" style="background: var(--bg-primary); color: var(--text-primary);">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between">
+        <a href="#top" style="color: var(--accent); font-weight: 600; font-size: 1.25rem;">
+            RakibPortfolio
+        </a>
+
+        <div class="hidden md:flex gap-1">
+            <a href="#top" class="nav-link" style="color: var(--text-secondary);">
+                <span class="bi bi-house-door" aria-hidden="true"></span> Home
+            </a>
+            <a href="#about" class="nav-link" style="color: var(--text-secondary);">
+                <span class="bi bi-person" aria-hidden="true"></span> About
+            </a>
+            <a href="#experience" class="nav-link" style="color: var(--text-secondary);">
+                <span class="bi bi-briefcase" aria-hidden="true"></span> Experience
+            </a>
+            <a href="#skills" class="nav-link" style="color: var(--text-secondary);">
+                <span class="bi bi-grid-fill" aria-hidden="true"></span> Skills
+            </a>
+            <a href="#projects" class="nav-link" style="color: var(--text-secondary);">
+                <span class="bi bi-grid" aria-hidden="true"></span> Projects
+            </a>
+            <a href="#writing" class="nav-link" style="color: var(--text-secondary);">
+                <span class="bi bi-journal-text" aria-hidden="true"></span> Writing
+            </a>
+            <a href="#contact" class="nav-link" style="color: var(--text-secondary);">
+                <span class="bi bi-envelope" aria-hidden="true"></span> Contact
+            </a>
+        </div>
+
+        <div class="flex gap-2 md:gap-4 items-center">
+            <div class="theme-toggle hidden md:flex" @onclick="ToggleTheme">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" @class="icon light:@Theme.IsDark dark:!Theme.IsDark">
+                    @if (Theme.IsDark)
+                    {
+                        <path d="M12 5.5c2.76 0 5 2.24 5 5s-2.24 5-5 5S7 13.26 7 10.5 9.24 5.5 12 5.5Zm0 11.5c-2.49 0-5-2.01-5-5s2.01-5 5-5 5 2.01 5 5-2.51 5-5 5Z" />
+                    }
+                    else
+                    {
+                        <path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2Zm0 2c-3.87 0-7 3.13-7 7s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7Zm-4.34 5.41l1.42 1.42L15.15 12.06l-1.42 1.42L11 8.38l1.42-1.42L8.38 7.07 5.77 9.68 4.35 7.26Z" />
+                    }
+                </svg>
+            </div>
+
+            <div class="theme-toggle md:hidden" @onclick="ToggleTheme">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" @class="icon light:@Theme.IsDark dark:!Theme.IsDark">
+                    @if (Theme.IsDark)
+                    {
+                        <path d="M12 5.5c2.76 0 5 2.24 5 5s-2.24 5-5 5S7 13.26 7 10.5 9.24 5.5 12 5.5Zm0 11.5c-2.49 0-5-2.01-5-5s2.01-5 5-5 5 2.01 5 5-2.51 5-5 5Z" />
+                    }
+                    else
+                    {
+                        <path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2Zm0 2c-3.87 0-7 3.13-7 7s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7Zm-4.34 5.41l1.42 1.42L15.15 12.06l-1.42 1.42L11 8.38l1.42-1.42L8.38 7.07 5.77 9.68 4.35 7.26Z" />
+                    }
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    protected void ToggleTheme()
+    {
+        _ = Theme.ToggleThemeAsync();
+    }
+}
