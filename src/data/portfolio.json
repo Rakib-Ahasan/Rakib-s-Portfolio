@@ -1,12 +1,22 @@
 {
   "profile": {
     "name": "Md. Rakib Ahasan",
-    "title": "Software Engineer | .NET / C# Full-Stack | Fintech & Payments",
+    "title": "Senior .NET Engineer | Senior Backend Engineer (.NET) | Fintech & Payments",
     "tagline": "I build and scale fintech and enterprise platforms that handle millions of users.",
-    "summary": "Full-stack .NET engineer with 5+ years building and scaling fintech and enterprise platforms, including systems for bKash (50M+ users) and JustGo's multi-region payments platform. Strong in ASP.NET Core, C#, SQL Server, REST APIs, microservices, Redis caching, and Azure DevOps CI/CD, with front-end experience in React, Angular, Blazor, and jQuery. Independently designed and built EduNest, a multi-tenant school management system using Clean Architecture, Redis, and RabbitMQ.",
-    "location": "Bangladesh",
+    "summary": "Senior .NET backend engineer with 5+ years building and scaling fintech and enterprise platforms, including systems for bKash (50M+ users, 99.9% uptime) and JustGo's multi-region Adyen payments platform. Strong in ASP.NET Core (.NET 9/10), C#, SQL Server, REST APIs, microservices, Redis, RabbitMQ, and Azure DevOps CI/CD, with front-end experience in React, Angular, Blazor, and jQuery. Independently designed and built EduNest, a multi-tenant school management platform using Clean Architecture, Redis, and RabbitMQ.",
+    "location": "Dhaka, Bangladesh (UTC+6)",
     "timezone": "UTC+6",
     "openTo": "Open to Remote: US, UK, EU, Canada, Australia | Relocation with visa sponsorship",
+    "availability": {
+      "visaSponsorship": "Sponsorship required for relocation; not needed for remote",
+      "noticePeriod": "Immediate to 4 weeks",
+      "timezoneFlexibility": "UTC+6 · Overlaps EU, US, Australia",
+      "languages": [
+        { "language": "English", "level": "C1" },
+        { "language": "Bengali", "level": "Native" },
+        { "language": "Arabic", "level": "Intermediate" }
+      ]
+    },
     "email": "bd.rakibahasan@gmail.com",
     "phone": "+880 1770 637360",
     "linkedin": "https://linkedin.com/in/rakib-ahasan",
@@ -36,11 +46,12 @@
       "period": "April 2026 — Present",
       "context": "Dhaka, Bangladesh (Hybrid) | Sports membership & club-management platform | .NET 9, SQL Server, Dapper",
       "bullets": [
-        "Delivered backend features across Member Profile, Venue Management, Invoice Management, and Payment modules in a modular .NET architecture.",
-        "Integrated Adyen payment methods — ACH, BACS Direct Debit, SEPA Direct Debit, and PayTo — with cart/store-based merchant account and API-key resolution across UK, US, Europe, and Australia.",
-        "Optimized high-traffic endpoints through query-level tuning and caching, reducing one grid API from ~110s to 9–13s (~90% faster).",
-        "Built audit logging and observability — profile-level change tracking, receipt-level logs, and provider-response analysis.",
-        "Implemented business-critical validation and workflow logic with xUnit tests for core scenarios."
+        "Owned backend delivery across Member Profile, Venue Management, Invoice Management, and Payment modules of a modular .NET platform, keeping API behavior consistent across modules for web and mobile clients.",
+        "Integrated Adyen payment methods — ACH, BACS Direct Debit, SEPA Direct Debit, and PayTo — with cart/store-based merchant account and API-key resolution, enabling payments across the UK, US, Europe, and Australia.",
+        "Reduced a high-traffic grid API from ~110s to 9–13s (~90% faster) through query-level tuning and caching.",
+        "Resolved provider, currency, acquirer, refund-tax, and asynchronous payment-status defects across payment workflows, improving reliability of failed and pending transactions.",
+        "Built audit logging and observability — profile-level change tracking, receipt-level logs, and provider-response analysis — speeding up troubleshooting and traceability.",
+        "Implemented business-critical validation and workflow logic with xUnit tests for core scenarios, improving accuracy and regression resistance."
       ]
     },
     {
@@ -49,11 +60,12 @@
       "period": "Jan 2025 — Mar 2026",
       "context": "Dhaka, Bangladesh | Mission-critical .NET Core applications for 50M+ users",
       "bullets": [
-        "Sustained 99.9% production uptime for 50M+ users on mission-critical .NET Core applications.",
-        "Led a zero-downtime SQL Server → MySQL migration of 500 GB+ data with a <2-hour cutover, including rollback and validation planning.",
-        "Built automated Excel/PDF reporting pipelines with ASP.NET Core and Jenkins CI/CD, cutting manual effort by 70% and deployment time from 4 hours to 30 minutes.",
-        "Resolved escalated production incidents through systematic root-cause analysis, eliminating recurring performance degradation during peak hours.",
-        "Designed RBAC for 500+ users, AES-256 encryption, and activity audit trails; mentored junior developers on SOLID, code review, and unit testing."
+        "Developed and maintained mission-critical .NET Core applications for bKash, sustaining 99.9% uptime in production for 50M+ users.",
+        "Led a 500 GB+ SQL Server → MySQL migration with a <2-hour cutover window (minimal downtime), including full rollback and validation planning.",
+        "Automated Excel/PDF reporting pipelines with ASP.NET Core and Jenkins CI/CD, cutting manual effort by 70% and deployment time from 4 hours to 30 minutes.",
+        "Owned escalated production incidents through systematic root-cause analysis, eliminating recurring performance degradation during peak business hours.",
+        "Designed RBAC for 500+ users, AES-256 encryption for sensitive data, and activity audit trails.",
+        "Mentored junior developers on SOLID, code review, and unit testing."
       ]
     },
     {
@@ -71,7 +83,7 @@
     {
       "role": "Freelance Software Developer",
       "company": "Self-Employed (Remote)",
-      "period": "2021 — 2022",
+      "period": "Jan 2021 — Dec 2021",
       "context": "Remote | Contract backend work",
       "bullets": [
         "Delivered ASP.NET / C# backend and SQL Server projects for remote clients, covering API development, schema design, and bug-fix contracts."
@@ -111,7 +123,7 @@
       "status": "Completed (Independent Project)",
       "problem": "Schools need a multi-tenant management platform with strict data isolation and reliable payment reconciliation.",
       "approach": "Built a modular monolith with Clean Architecture (Domain, Application, Infrastructure, API layers). Multi-tenant data isolation on shared infrastructure, Redis distributed caching, RabbitMQ async processing, and a payment CSV export with cent-level reconciliation logic.",
-      "result": "Multi-tenant school management platform with tenant-level isolation, RBAC (super admin/admin/school-level) with JWT authentication, Redis + RabbitMQ for high-volume operations, and cent-level payment accuracy.",
+      "result": "Multi-tenant school management platform with tenant-level isolation, RBAC (super admin/admin/school-level) with JWT authentication, Redis + RabbitMQ for high-volume operations, and cent-level payment accuracy. Private codebase; architecture walkthrough available on request.",
       "role": "Backend engineering · architecture · multi-tenancy",
       "tech": [".NET 10", "Blazor", "MSSQL", "EF Core", "Redis", "RabbitMQ"],
       "media": [],
