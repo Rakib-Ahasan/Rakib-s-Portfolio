@@ -110,12 +110,18 @@
       "status": "Delivered",
       "problem": "Enterprise needed a modular platform serving web + mobile clients across multiple domains and regions.",
       "approach": "Modular REST API covering membership, organization, booking, venue, invoice, class, and results domains. Multi-region Adyen payment integration with cart/store-based merchant account resolution.",
-      "result": "Enterprise-scale platform serving web and mobile clients with multi-region payment support across UK, US, Europe, and Australia.",
+      "result": "Enterprise-scale platform serving web and mobile clients with multi-region payment support across UK, US, Europe, and Australia. Backend engineering contributions: Adyen integration (ACH, BACS, SEPA, PayTo), query optimization, and audit logging. UI screenshots from JustGo's public marketing site.",
       "role": "Backend engineering · payment integration",
       "tech": [".NET 9 / .NET Framework 4.8.1", "SQL Server", "Dapper", "Adyen"],
-      "media": [],
-      "coverImage": "",
-      "imageType": "diagram"
+      "media": [
+        "/media/projects/justgo/features.png",
+        "/media/projects/justgo/online-payments.png",
+        "/media/projects/justgo/class-event.png",
+        "/media/projects/justgo/membership.png",
+        "/media/projects/justgo/membership-details.png"
+      ],
+      "coverImage": "/media/projects/justgo/online-payments.png",
+      "imageType": "screenshot"
     },
     {
       "slug": "edunest",
