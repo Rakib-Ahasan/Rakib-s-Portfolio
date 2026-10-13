@@ -1,6 +1,6 @@
 ---
 const { projects } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <section id="projects" class="section border-y border-[var(--line)]" data-reveal>
   <div class="container">
@@ -14,18 +14,16 @@ const base = import.meta.env.BASE_URL;
         moved the system.
       </p>
     </div>
-    <div class="grid gap-4 lg:grid-cols-2">
+    <div class="grid gap-12">
       {projects.map((project, index) => (
         <article
-          class={`card card-hover flex flex-col p-6 ${
-            index === 0 ? 'lg:col-span-2' : ''
-          }`}
+          class="card card-hover flex flex-col p-6"
           data-project-card
           data-project
         >
-          <div class="flex items-start justify-between gap-4">
-            <span class="eyebrow">{project.status}</span>
-            <span class="mono text-xs text-[var(--faint)]">
+          <div class="mb-4 flex items-center justify-between gap-4">
+            <span class="eyebrow rounded-full border border-[var(--line)] px-3 py-1 text-xs">{project.status}</span>
+            <span class="mono text-xs text-[var(--faint)] opacity-60">
               case/{project.slug}
             </span>
           </div>
@@ -38,24 +36,26 @@ const base = import.meta.env.BASE_URL;
                   ? 'UI'
                   : ''}
               </span>
-              <img
-                data-cover
-                src={`${base}${project.coverImage.replace(/^\//, '')}`}
-                alt={project.title}
-                loading="lazy"
-                class="w-full h-48 md:h-56 object-cover object-top rounded-lg border border-[var(--line)] mb-4"
-              />
+              <div class="w-full aspect-[16/9] max-h-[420px] overflow-hidden rounded-lg border border-[var(--line)] mb-4">
+                <img
+                  data-cover
+                  src={`${base}/${project.coverImage.replace(/^\//, '')}`}
+                  alt={project.title}
+                  loading="lazy"
+                  class="w-full h-full object-cover object-top"
+                />
+              </div>
               {project.media?.length > 1 && (
                 <div class="grid grid-cols-5 gap-2 mb-5">
                   {project.media.map((thumb) => (
                     <button
                       type="button"
-                      data-thumb={`${base}${thumb.replace(/^\//, '')}`}
+                      data-thumb={`${base}/${thumb.replace(/^\//, '')}`}
                       class="group aspect-video rounded border border-[var(--line)] overflow-hidden hover:border-[var(--accent)] transition-colors"
                       aria-label={`View ${project.title} screenshot`}
                     >
                       <img
-                        src={`${base}${thumb.replace(/^\//, '')}`}
+                        src={`${base}/${thumb.replace(/^\//, '')}`}
                         alt=""
                         loading="lazy"
                         class="w-full h-full object-cover object-top"
@@ -82,9 +82,6 @@ const base = import.meta.env.BASE_URL;
                   .join('')
                   .slice(0, 2)
                   .toUpperCase()}
-              </span>
-              <span class="relative mono text-xs text-[var(--muted)] uppercase tracking-wider">
-                Preview coming soon
               </span>
             </div>
           )}
@@ -119,7 +116,7 @@ const base = import.meta.env.BASE_URL;
               type="button"
               data-project={project.slug}
             >
-              Inspect ↗
+              View case study →
             </button>
           </div>
         </article>

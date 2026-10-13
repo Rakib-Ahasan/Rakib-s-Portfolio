@@ -3,16 +3,17 @@ interface Props {
   sections: { id: string; label: string }[];
 }
 const { sections } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container flex items-center justify-between h-14 lg:h-16">
-    <a href="/" class="text-lg font-bold text-gray-900 dark:text-white" aria-label="Home">RA</a>
+    <a href={base ? `${base}/` : '/'} class="text-lg font-bold text-[var(--text)] hover:text-[var(--accent)] transition-colors" aria-label="Home">RA</a>
     
     <ul class="hidden md:flex items-center gap-6" role="menubar">
       {sections.map(({ id, label }) => (
         <li role="none">
-          <a href={`#${id}`} class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-accent hover:dark:text-accent-light transition-colors" role="menuitem">{label}</a>
+          <a href={`#${id}`} class="text-sm font-medium text-[var(--text)] hover:text-accent hover:dark:text-accent-light transition-colors" role="menuitem">{label}</a>
         </li>
       ))}
     </ul>
@@ -41,7 +42,7 @@ const { sections } = Astro.props;
     <ul class="py-4 flex flex-col gap-2" role="menubar">
       {sections.map(({ id, label }) => (
         <li role="none">
-          <a href={`#${id}`} class="px-4 py-2 text-base font-medium text-gray-600 dark:text-gray-300 hover:text-accent hover:dark:text-accent-light transition-colors" role="menuitem">{label}</a>
+          <a href={`#${id}`} class="px-4 py-2 text-base font-medium text-[var(--text)] hover:text-accent hover:dark:text-accent-light transition-colors" role="menuitem">{label}</a>
         </li>
       ))}
     </ul>
