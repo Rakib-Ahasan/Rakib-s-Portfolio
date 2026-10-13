@@ -10,6 +10,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 	  <h1 class="max-w-4xl text-5xl font-bold leading-[.98] tracking-[-.06em] md:text-7xl">{profile.name}</h1>
 	  <p class="mono mt-6 text-lg text-[var(--accent)] md:text-xl">{profile.title}</p>
 	  <p class="mt-6 max-w-2xl text-xl leading-relaxed text-[var(--muted)]">{profile.tagline}</p>
+	  {profile.proof?.trim() && <p class="mono mt-3 text-sm text-[var(--accent)] whitespace-nowrap max-[375px]:whitespace-normal">{profile.proof}</p>}
 	  <div class="mt-9 flex flex-wrap gap-3">
 		<a class="inline-flex items-center justify-center gap-2 leading-none rounded-lg bg-[var(--accent)] px-5 py-3 font-semibold text-[var(--bg)] transition hover:-translate-y-0.5" href="#contact">Contact me</a>
 		<a class="inline-flex items-center justify-center gap-2 leading-none rounded-lg border border-[var(--line-strong)] px-5 py-3 font-semibold text-[var(--text)] transition hover:-translate-y-0.5 hover:bg-[var(--accent-soft)]" href={`${base}/${profile.cvPath.replace(/^\//, '')}`} download={profile.cvDownloadName}>Download CV</a>
