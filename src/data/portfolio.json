@@ -1,12 +1,13 @@
 {
   "profile": {
     "name": "Md. Rakib Ahasan",
-    "title": "Senior .NET Engineer | Senior Backend Engineer (.NET) | Fintech & Payments",
+    "title": "Senior .NET Backend Engineer · Fintech & Payments",
     "tagline": "I build and scale fintech and enterprise platforms that handle millions of users.",
-    "summary": "Senior .NET backend engineer with 5+ years building and scaling fintech and enterprise platforms, including systems for bKash (50M+ users, 99.9% uptime) and JustGo's multi-region Adyen payments platform. Strong in ASP.NET Core (.NET 9/10), C#, SQL Server, REST APIs, microservices, Redis, RabbitMQ, and Azure DevOps CI/CD, with front-end experience in React, Angular, Blazor, and jQuery. Independently designed and built EduNest, a multi-tenant school management platform using Clean Architecture, Redis, and RabbitMQ.",
+    "summary": ".NET backend engineer with 5+ years building and scaling fintech and enterprise platforms, including systems for bKash (50M+ users, 99.9% uptime) and JustGo's multi-region Adyen payments platform. Strong in ASP.NET Core (.NET 9/10), C#, SQL Server, REST APIs, microservices, Redis, RabbitMQ, and Azure DevOps CI/CD, with front-end experience in React, Angular, Blazor, and jQuery. Independently designed and built EduNest, a multi-tenant school management platform using Clean Architecture, Redis, and RabbitMQ.",
     "location": "Dhaka, Bangladesh (UTC+6)",
     "timezone": "UTC+6",
     "openTo": "Open to Remote: US, UK, EU, Canada, Australia | Relocation with visa sponsorship",
+    "badge": "Open to remote · Visa sponsorship",
     "availability": {
       "visaSponsorship": "Sponsorship required for relocation; not needed for remote",
       "noticePeriod": "Immediate to 4 weeks",
@@ -21,13 +22,13 @@
     "phone": "+880 1770 637360",
     "linkedin": "https://linkedin.com/in/rakib-ahasan",
     "github": "https://github.com/Rakib-Ahasan",
-    "cvPath": "/cv.pdf",
+    "cvPath": "/Md_Rakib_Ahasan_CV.pdf",
     "cvDownloadName": "Md_Rakib_Ahasan_CV.pdf",
     "photoPath": "/media/profile.jpg"
   },
   "metrics": [
     { "value": "99.9%", "label": "Production uptime", "detail": "50M+ users" },
-    { "value": "500 GB+", "label": "Zero-downtime migration", "detail": "<2h cutover" },
+    { "value": "500 GB+", "label": "Minimal-downtime migration", "detail": "<2h cutover" },
     { "value": "~90%", "label": "API response-time cut", "detail": "110s → 9–13s" },
     { "value": "70%", "label": "Less manual reporting", "detail": "Automated pipelines" },
     { "value": "4h → 30m", "label": "Deployment cycle", "detail": "Jenkins CI/CD" }
