@@ -1,44 +1,46 @@
 # Md. Rakib Ahasan — Portfolio
 
-Personal portfolio built with Astro + Tailwind CSS. Static site deployed to GitHub Pages.
+Astro + Tailwind CSS portfolio for a .NET backend engineer, deployed as a static site to GitHub Pages.
+
+Live site: https://rakib-ahasan.github.io/Rakib-s-Portfolio/
 
 ## Stack
-- Astro (static output)
-- Tailwind CSS
-- TypeScript
-- Content: JSON-driven (src/data/portfolio.json)
 
-## Local development
+- Astro 4
+- Tailwind CSS 3
+- TypeScript
+- Inter and JetBrains Mono
+- JSON-driven content
+
+## Run locally
+
+```bash
 npm install
 npm run dev
-
-## Build
 npm run build
+npm run preview
+```
+
+## Project structure
+
+- `src/components/` — page sections and UI components
+- `src/data/portfolio.json` — portfolio content
+- `src/layouts/` — document shell and metadata
+- `src/styles/` — global theme and responsive styles
+- `public/` — static assets such as the CV, favicon, and profile photo
 
 ## Editing content
-All content lives in src/data/portfolio.json.
 
-- profile — name, title, contact, cv, photo
-- metrics — key impact numbers
-- experience — work history (array)
-- projects — project cards (array) with media, coverImage, imageType
-- skills — grouped categories
-- articles — dev.to links (array)
-- education, certifications, contact
+Edit `src/data/portfolio.json` to update:
 
-## Adding a project
-Append to "projects" with: slug, title, status, problem, approach, result, role, tech, media, coverImage, imageType.
+- `profile`, including contact details and optional booking URL
+- `experience` and `skills`
+- `projects`, including optional `role`, `flow`, `metrics`, `decisions`, and `improvements`
+- `articles` for the optional Writing section
+- `education`, `certifications`, and contact settings
 
-## Adding an article
-Append to "articles" with: title, url, summary, publishedAt.
+Empty optional fields render no UI.
 
-## Media
-- Profile photo: public/media/profile.jpg
-- CV: public/cv.pdf
-- Project screenshots: public/media/projects/<slug>/
-- Architecture diagrams: public/media/projects/<slug>/diagram.png
+## Deployment
 
-## Deploy
-Auto-deploys to GitHub Pages on push to main via .github/workflows/deploy.yml.
-
-Live: https://rakib-ahasan.github.io/Rakib-s-Portfolio/
+The workflow in `.github/workflows/deploy.yml` builds the Astro site with `withastro/action@v3` on pushes to `main`, then deploys the result with `actions/deploy-pages@v4` to GitHub Pages.

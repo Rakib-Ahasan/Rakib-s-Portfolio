@@ -28,10 +28,8 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Md. Rakib Ahasan',
-  jobTitle: 'Senior .NET Backend Engineer',
-  email: 'mailto:bd.rakibahasan@gmail.com',
-  url: canonicalURL,
-  address: { '@type': 'PostalAddress', addressCountry: 'BD' },
+	jobTitle: '.NET Backend Engineer',
+  url: new URL(`${base}/`, Astro.site).href,
 	sameAs: ['https://github.com/Rakib-Ahasan', 'https://linkedin.com/in/rakib-ahasan', 'https://dev.to/rakibahasan'],
 };
 ---
@@ -47,7 +45,6 @@ const personSchema = {
 	<meta name="author" content="Md. Rakib Ahasan" />
 	<link rel="canonical" href={canonicalURL} />
 	<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
-	<link rel="sitemap" type="application/xml" href={`${base}/sitemap-index.xml`} />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={canonicalURL} />
 	<meta property="og:title" content={title} />

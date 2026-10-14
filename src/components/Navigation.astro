@@ -19,7 +19,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     </ul>
 
     <button 
-      class="theme-toggle p-2 text-gray-600 dark:text-gray-300" 
+       class="theme-toggle min-h-[44px] min-w-[44px] p-2 text-gray-600 dark:text-gray-300" 
       id="theme-toggle"
       aria-label="Toggle dark/light mode"
     >
@@ -31,7 +31,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </svg>
     </button>
 
-    <button class="md:hidden p-2 text-gray-600 dark:text-gray-300" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+     <button class="md:hidden min-h-[44px] min-w-[44px] p-2 text-gray-600 dark:text-gray-300" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -42,7 +42,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <ul class="py-4 flex flex-col gap-2" role="menubar">
       {sections.map(({ id, label }) => (
         <li role="none">
-          <a href={`#${id}`} class="px-4 py-2 text-base font-medium text-[var(--text)] hover:text-accent hover:dark:text-accent-light transition-colors" role="menuitem">{label}</a>
+          <a href={`#${id}`} class="flex min-h-[44px] items-center px-4 py-2 text-base font-medium text-[var(--text)] hover:text-accent hover:dark:text-accent-light transition-colors" role="menuitem">{label}</a>
         </li>
       ))}
     </ul>
@@ -55,9 +55,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   const mobileMenu = document.getElementById('mobile-menu');
   
   if (menuBtn && mobileMenu) {
+    const closeMenu = () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    };
     menuBtn.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('hidden');
       menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
     });
   }
 

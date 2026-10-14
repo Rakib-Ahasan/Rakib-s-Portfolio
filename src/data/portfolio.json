@@ -7,8 +7,8 @@
     "location": "Dhaka, Bangladesh (UTC+6)",
     "timezone": "UTC+6",
     "openTo": "Open to Remote: US, UK, EU, Canada, Australia | Relocation with visa sponsorship",
-    "badge": "Open to remote · Visa sponsorship",
-    "proof": "Backend for 50M+ users · 99.9% uptime · API ~110s → 9–13s",
+    "badge": "Open to remote · Relocation with visa sponsorship",
+    "proof": "Backend for 50M+ users · 99.9% uptime · API 110s → 9–13s",
     "availability": {
       "visaSponsorship": "Sponsorship required for relocation; not needed for remote",
       "noticePeriod": "Immediate to 4 weeks",
@@ -21,6 +21,9 @@
     },
     "email": "bd.rakibahasan@gmail.com",
     "phone": "+880 1770 637360",
+    "languages": "English (Professional, C1) · Bengali (Native) · Arabic (Intermediate)",
+    "timezoneNote": "Based in UTC+6 (Bangladesh) · flexible to overlap with EU, US and Australia time zones",
+    "bookingUrl": "",
     "linkedin": "https://linkedin.com/in/rakib-ahasan",
     "github": "https://github.com/Rakib-Ahasan",
     "cvPath": "/Md_Rakib_Ahasan_CV.pdf",
@@ -102,27 +105,16 @@
       "approach": "Index and query-plan optimization across high-traffic paths.",
       "result": "Handles 3x peak volume on same infrastructure. Replaced 40-hour monthly manual reconciliation with a 2-hour automated compliance report (~450 person-hours saved/year).",
       "role": "Backend engineer — index and query-plan optimization",
-      "flow": ["Client", "API", "Optimized query", "SQL Server / MySQL", "Report"],
+      "flow": ["Client", "API", "Indexed query", "SQL Server / MySQL", "Report"],
       "metrics": [{ "label": "Monthly reconciliation", "before": "40h manual", "after": "2h automated" }],
-      "decisions": [
-        {
-          "title": "Optimize before scaling infrastructure",
-          "why": "I optimized indexes and query plans so the nationwide sales platform handles 3x peak transaction volume on the same infrastructure."
-        },
-        {
-          "title": "Automated reporting pipelines",
-          "why": "Excel/PDF reporting moved to automated pipelines with ASP.NET Core and Jenkins CI/CD, cutting manual effort by 70%."
-        }
-      ],
-      "improvements": [
-        "Add a query performance regression test to CI so future schema changes don't undo the index gains"
-      ],
+      "decisions": [],
+      "improvements": [],
       "note": "",
       "tech": [".NET Core", "SQL Server", "MySQL", "jQuery"],
       "media": [],
       "coverImage": "",
       "imageType": "diagram",
-      "initials": "ISMS"
+      "initials": "IS"
     },
     {
       "slug": "justgo",
@@ -133,25 +125,9 @@
       "result": "Enterprise-scale platform serving web and mobile clients with multi-region payment support across UK, US, Europe, and Australia. Backend engineering contributions: Adyen integration (ACH, BACS, SEPA, PayTo), query optimization, and audit logging.",
       "role": "Backend engineer — Adyen integration, query optimization, audit logging",
       "flow": ["Client", "API", "Cache", "Dapper / SQL", "Response"],
-      "metrics": [{ "label": "Grid API response", "before": "~110s", "after": "9–13s" }],
-      "decisions": [
-        {
-          "title": "Query tuning and caching on the grid API",
-          "why": "I reduced a high-traffic grid API from 110s to 9–13s through query-level tuning and caching."
-        },
-        {
-          "title": "Redesigned cart/store-based merchant resolution",
-          "why": "Adyen integration originally resolved merchant accounts per region with separate configuration. I redesigned it to resolve dynamically from cart/store context, so the UK, US, Europe, and Australia are now handled from one place instead of per-region config."
-        },
-        {
-          "title": "Audit logging and observability",
-          "why": "I built profile-level change tracking, receipt-level logs, and provider-response analysis, which sped up troubleshooting and traceability across payment workflows."
-        }
-      ],
-      "improvements": [
-        "Move async payment-status reconciliation to an event-driven flow",
-        "Add contract tests against the Adyen sandbox to catch provider-response regressions earlier"
-      ],
+      "metrics": [{ "label": "Grid API response", "before": "110s", "after": "9–13s" }],
+      "decisions": [],
+      "improvements": [],
       "note": "",
       "tech": [".NET 9 / .NET Framework 4.8.1", "SQL Server", "Dapper", "Adyen"],
       "media": [],
@@ -169,16 +145,7 @@
       "role": "Sole designer and developer",
       "flow": ["Request", "Tenant resolution", "Application layer", "EF Core / MSSQL", "Redis + RabbitMQ"],
       "metrics": [],
-      "decisions": [
-        {
-          "title": "Modular monolith, not microservices",
-          "why": "Solo project, so the network and deployment overhead of microservices wasn't worth it. A modular monolith with Clean Architecture keeps the option to split later."
-        },
-        {
-          "title": "Clean Architecture with explicit layers",
-          "why": "Multi-tenancy touches every layer. Explicit Domain/Application/Infrastructure/API boundaries let me enforce tenant isolation in one place instead of scattering checks across handlers."
-        }
-      ],
+      "decisions": [],
       "improvements": [],
       "note": "",
       "tech": [".NET 10", "Blazor", "MSSQL", "EF Core", "Redis", "RabbitMQ"],
@@ -208,7 +175,7 @@
     }
   ],
   "skills": {
-    "Backend": ["C#", "ASP.NET Core (Web API, MVC, Razor Pages)", ".NET 10 / .NET 9 / .NET Framework 4.8", "Entity Framework Core", "Dapper", "LINQ", "SignalR", "Python"],
+    "Backend": ["C#", "ASP.NET Core (Web API, MVC, Razor Pages)", ".NET 10 / .NET 9 / .NET Framework 4.8", "Entity Framework Core", "Dapper", "LINQ", "SignalR"],
     "Frontend": ["React.js", "Angular", "Blazor", "JavaScript / TypeScript", "jQuery", "HTML5", "CSS3"],
     "Architecture": ["Microservices", "Clean Architecture", "Modular Monolith", "Multi-Tenancy", "CQRS", "RESTful API Design", "Swagger / OpenAPI", "SOLID", "Design Patterns"],
     "Databases & Caching": ["SQL Server", "MySQL", "PostgreSQL", "Redis", "IMemoryCache / Distributed Caching", "Query Optimization", "Indexing", "Stored Procedures", "Schema Design"],
@@ -229,12 +196,9 @@
     "In progress: Microsoft Azure Fundamentals (AZ-900)"
   ],
   "articles": [
-    {
-      "title": ".NET Folder Structure A to Z",
-      "url": "https://dev.to/rakibahasan/net-folder-structure-a-to-z-467g",
-      "summary": "How I structure .NET projects — Clean Architecture layers, folder conventions, and where each file belongs.",
-      "publishedAt": ""
-    }
+    { "title": "AI Agent-এর জন্য API: শূন্য থেকে শুরু, .NET ডেভেলপারের শেখার নোট", "url": "https://dev.to/rakibahasan/ai-agent-er-jny-api-shuuny-theke-shuru-net-ddebhelpaarer-shekhaar-nott-63m", "date": "2026-10-12", "tags": ["dotnet", "api", "ai", "mcp"], "lang": "BN" },
+    { "title": "কখন Repository, MediatR আর CQRS দরকার — আর কখন Overkill", "url": "https://dev.to/rakibahasan/repository-mediatr-cqrs-production-e-yaa-shikhechi-26m6", "date": "2026-10-10", "tags": ["dotnet", "csharp", "architecture"], "lang": "BN" },
+    { "title": ".NET Folder Structure: A to Z", "url": "https://dev.to/rakibahasan/net-folder-structure-a-to-z-467g", "date": "2026-10-09", "tags": ["dotnetcore", "csharp", "cleancode", "architecture"], "lang": "EN" }
   ],
   "writing": [],
   "contact": {
