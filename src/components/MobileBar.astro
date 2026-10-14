@@ -1,0 +1,32 @@
+---
+const { profile } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<nav id="mobile-quick-actions" class="mobile-quick-actions fixed inset-x-0 bottom-0 z-40 hidden border-t border-[var(--line)] bg-[var(--surface)]/95 p-2 backdrop-blur md:hidden" aria-label="Quick contact actions">
+  <div class="grid grid-cols-3 gap-2 pr-20">
+	<a class="btn btn-secondary min-h-[44px] px-2 py-2 text-xs" href={`${base}/${profile.cvPath.replace(/^\//, '')}`} download={profile.cvDownloadName}>Download CV</a>
+	<a class="btn btn-ghost min-h-[44px] px-2 py-2 text-xs" href={`mailto:${profile.email}`}>Email</a>
+	<a class="btn btn-ghost min-h-[44px] px-2 py-2 text-xs" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+  </div>
+</nav>
+<script is:inline>
+  document.documentElement.classList.add('js');
+  const bar = document.querySelector('#mobile-quick-actions');
+  const hero = document.querySelector('#top');
+  const contact = document.querySelector('#contact');
+  const updateBar = () => {
+	const dialogOpen = Boolean(document.querySelector('dialog[open]'));
+	const heroVisible = hero?.getBoundingClientRect().bottom > 0 && hero?.getBoundingClientRect().top < window.innerHeight;
+	const contactVisible = contact?.getBoundingClientRect().bottom > 0 && contact?.getBoundingClientRect().top < window.innerHeight;
+	bar?.classList.toggle('hidden', heroVisible || contactVisible || dialogOpen);
+  };
+  if (bar && hero && contact) {
+	bar.classList.add('hidden');
+	const observer = new IntersectionObserver(updateBar, { threshold: 0.05 });
+	observer.observe(hero);
+	observer.observe(contact);
+	document.addEventListener('toggle', updateBar, true);
+	window.addEventListener('scroll', updateBar, { passive: true });
+	updateBar();
+  }
+</script>

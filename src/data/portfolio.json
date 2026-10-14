@@ -41,6 +41,7 @@
     { "name": "Dapper / SQL", "short": "04", "detail": "Indexes, query plans, and data access tuned against production-shaped queries." },
     { "name": "Response", "short": "05", "detail": "Observable, resilient responses with useful latency and error boundaries." }
   ],
+  "coreSkills": ["C#", "ASP.NET Core", "Dapper", "Entity Framework Core", "SQL Server", "Redis", "RabbitMQ", "Clean Architecture", "Adyen", "Azure", "Jenkins"],
   "experience": [
     {
       "role": "Software Engineer — Backend",
@@ -185,6 +186,25 @@
       "coverImage": "",
       "imageType": "screenshot",
       "initials": "EN"
+    },
+    {
+      "slug": "slow-query-radar",
+      "name": "Slow Query Radar",
+      "status": "In progress (personal project)",
+      "initials": "SQ",
+      "role": "Author and developer",
+      "tech": [".NET 8", "ASP.NET Core", "Blazor Server", "Dapper", "SQL Server Query Store", "ScriptDom"],
+      "problem": "Teams needed a consistent way to find and review slow SQL queries and optimize them.",
+      "approach": "Collects slow-query data from SQL Server Query Store, analyzes execution plans and T-SQL, and produces copy-paste-ready suggestions, with a Blazor UI and a CLI.",
+      "result": "Read-only by design: it never applies fixes automatically on production. Private codebase; architecture walkthrough available on request.",
+      "flow": ["Query Store", "Collector", "Analyzer", "Suggestions", "Blazor UI"],
+      "metrics": [],
+      "decisions": [],
+      "improvements": [],
+      "note": "",
+      "coverImage": "",
+      "media": [],
+      "imageType": ""
     }
   ],
   "skills": {
@@ -216,6 +236,7 @@
       "publishedAt": ""
     }
   ],
+  "writing": [],
   "contact": {
     "formspreeId": "",
     "replyNote": "Typically replies within 24h",

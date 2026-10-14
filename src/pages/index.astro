@@ -8,22 +8,24 @@ import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import Skills from '../components/Skills.astro';
 import Education from '../components/Education.astro';
+import Writing from '../components/Writing.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import portfolio from '../data/portfolio.json';
 ---
 
 <Layout>
-	<Navigation sections={[{ id: 'top', label: 'Home' }, { id: 'experience', label: 'Experience' }, { id: 'projects', label: 'Projects' }, { id: 'skills', label: 'Skills' }, { id: 'education', label: 'Education' }, { id: 'contact', label: 'Contact' }]} />
+	<Navigation sections={[{ id: 'top', label: 'Home' }, { id: 'experience', label: 'Experience' }, { id: 'projects', label: 'Projects' }, { id: 'skills', label: 'Skills' }, { id: 'education', label: 'Education' }, ...(portfolio.writing?.length ? [{ id: 'writing', label: 'Writing' }] : []), { id: 'contact', label: 'Contact' }]} />
   <main id="main">
 	<Hero profile={portfolio.profile} />
 	<Impact metrics={portfolio.metrics} />
 	<Flow flow={portfolio.flow} />
 	<Experience experience={portfolio.experience} />
 	<Projects projects={portfolio.projects} />
-	<Skills skills={portfolio.skills} />
+	<Skills skills={portfolio.skills} coreSkills={portfolio.coreSkills} />
 	<Education education={portfolio.education} certifications={portfolio.certifications} />
-	<Contact profile={portfolio.profile} contact={portfolio.contact} />
+  <Writing writing={portfolio.writing} />
+  <Contact profile={portfolio.profile} contact={portfolio.contact} sectionNumber={portfolio.writing?.length ? '08' : '07'} />
   </main>
   <Footer />
 </Layout>

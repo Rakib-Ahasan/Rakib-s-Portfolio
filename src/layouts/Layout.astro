@@ -6,6 +6,8 @@ import '@fontsource/inter/700.css';
 import '@fontsource/jetbrains-mono/400.css';
 import '@fontsource/jetbrains-mono/500.css';
 import '../styles/global.css';
+import MobileBar from '../components/MobileBar.astro';
+import portfolio from '../data/portfolio.json';
 
 interface Props {
   title?: string;
@@ -26,12 +28,11 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Md. Rakib Ahasan',
-	jobTitle: '.NET Backend Engineer',
+  jobTitle: 'Senior .NET Backend Engineer',
   email: 'mailto:bd.rakibahasan@gmail.com',
   url: canonicalURL,
   address: { '@type': 'PostalAddress', addressCountry: 'BD' },
-  sameAs: ['https://linkedin.com/in/rakib-ahasan', 'https://github.com/Rakib-Ahasan'],
-  knowsAbout: ['ASP.NET Core', 'C#', 'SQL Server', 'Dapper', 'Redis', 'Clean Architecture', 'CQRS', 'Adyen'],
+	sameAs: ['https://github.com/Rakib-Ahasan', 'https://linkedin.com/in/rakib-ahasan', 'https://dev.to/rakibahasan'],
 };
 ---
 
@@ -66,8 +67,15 @@ const personSchema = {
 	</script>
   </head>
   <body>
+	<style is:global>
+	  body { padding-bottom: 0; }
+	  @media (max-width: 767px) {
+		html.js body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
+	  }
+	</style>
 	<a class="skip-link" href="#main">Skip to content</a>
 	<slot />
+	<MobileBar profile={portfolio.profile} />
 	<script is:inline>
 	  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 	  const reveal = document.querySelectorAll('[data-reveal]');
