@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://rakib-ahasan.dev/sitemap-index.xml

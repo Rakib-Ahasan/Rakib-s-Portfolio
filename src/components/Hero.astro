@@ -21,7 +21,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 	<div class="terminal-window card order-1 relative overflow-hidden p-1 shadow-[0_0_80px_var(--accent-soft)] lg:order-2">
 	  <div class="hidden items-center gap-2 border-b border-[var(--line)] px-4 py-3 md:flex"><i class="h-2.5 w-2.5 rounded-full bg-[#ff6b6b]"></i><i class="h-2.5 w-2.5 rounded-full bg-[#ffd166]"></i><i class="h-2.5 w-2.5 rounded-full bg-[#06d6a0]"></i><span class="mono ml-3 text-xs text-[var(--faint)]">rakib.cs</span></div>
 	  <div class="flex items-center justify-center bg-[radial-gradient(circle_at_50%_35%,var(--accent-soft),transparent_55%)] p-3 md:aspect-square md:p-8">
-		<img src={`${base}/${profile.photoPath.replace(/^\//, '')}`} alt="Portrait of Md. Rakib Ahasan" class="profile-photo h-28 w-28 rounded-full border border-[var(--line-strong)] shadow-[0_0_80px_-10px_var(--accent)] object-cover md:h-full md:w-full md:rounded-lg" loading="lazy" />
+		<img src={`${base}/${profile.photoPath.replace(/^\//, '')}`} alt="Portrait of Md. Rakib Ahasan" width="472" height="591" class="profile-photo h-28 w-28 rounded-full border border-[var(--line-strong)] shadow-[0_0_80px_-10px_var(--accent)] object-cover md:h-full md:w-full md:rounded-lg" loading="eager" fetchpriority="high" />
 		<div class="hidden h-full w-full items-center justify-center rounded-lg border border-[var(--line-strong)] bg-[var(--surface-strong)] text-7xl font-bold text-[var(--accent)]" aria-label="RA initials avatar">RA</div>
 	  </div>
 	  <div class="mono hidden justify-between border-t border-[var(--line)] px-4 py-3 text-xs text-[var(--faint)] md:flex"><span>status: shipping</span><span>UTC+6</span></div>
