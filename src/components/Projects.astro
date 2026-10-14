@@ -46,7 +46,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 <img
                   data-cover
                   src={`${base}/${project.coverImage.replace(/^\//, '')}`}
-                  alt={project.title}
+                  alt={project.title || project.name}
                   loading="lazy"
                   class="w-full h-full object-cover object-top"
                 />
@@ -58,7 +58,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                       type="button"
                       data-thumb={`${base}/${thumb.replace(/^\//, '')}`}
                       class="group aspect-video rounded border border-[var(--line)] overflow-hidden hover:border-[var(--accent)] transition-colors"
-                      aria-label={`View ${project.title} screenshot`}
+                      aria-label={`View ${project.title || project.name} screenshot`}
                     >
                       <img
                         src={`${base}/${thumb.replace(/^\//, '')}`}
@@ -74,7 +74,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           ) : null}
           <h3 class={`mt-5 flex items-center gap-3 text-2xl font-semibold tracking-tight ${project.coverImage ? '' : 'mt-2'}`}>
             {!project.coverImage && (() => {
-              const initials = project.initials || project.title
+              const initials = project.initials || (project.title || project.name || '')
                 .split(' ')
                 .filter((word) => /^[A-Z]/.test(word))
                 .map((word) => word[0])
@@ -83,7 +83,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
                 .toUpperCase();
               return <span class={`inline-flex min-w-[40px] min-h-[40px] items-center justify-center rounded border border-[var(--line)] px-2 py-1 mono text-[var(--accent)] ${initials.length <= 2 ? 'text-sm' : 'text-xs'}`} aria-label={`${initials} project badge`}>{initials}</span>;
             })()}
-            <span>{project.title}</span>
+            <span>{project.title || project.name}</span>
           </h3>
           <div class="mt-6 grid gap-5 text-sm text-[var(--muted)] md:grid-cols-3">
             <div>
@@ -180,6 +180,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     if (!button) return;
     const project = projects.find((item) => item.slug === button.getAttribute('data-modal-id'));
         if (!project || !content || !dialog) return;
+        const projectName = project.title || project.name || '';
         activeTrigger = button;
         const sections = [
           section('Context', `<p class="text-[var(--muted)]">${escapeHtml(project.problem)}</p>`),
@@ -193,7 +194,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           hasItems(project.tech) ? section('Stack', `<div class="flex flex-wrap gap-2">${project.tech.map((tech) => `<span class="rounded-full border border-[var(--line)] px-2.5 py-1 mono text-xs text-[var(--muted)]">${escapeHtml(tech)}</span>`).join('')}</div>`) : '',
           hasText(project.note) ? section('Note', `<p class="text-[var(--muted)]">${escapeHtml(project.note)}</p>`) : '',
         ].join('');
-        content.innerHTML = `<h2 id="project-dialog-title" class="text-3xl font-semibold">${escapeHtml(project.title)}</h2>${sections}`;
+        content.innerHTML = `<h2 id="project-dialog-title" class="text-3xl font-semibold">${escapeHtml(projectName)}</h2>${sections}`;
         dialog.showModal();
         focusableElements = [closeButton, ...content.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')].filter(Boolean);
         closeButton?.focus();

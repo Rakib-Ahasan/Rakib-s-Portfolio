@@ -1,5 +1,21 @@
 ---
-const { skills } = Astro.props;
+const { skills, coreSkills } = Astro.props;
 const groups = Object.entries(skills);
 ---
-<section id="skills" class="section" data-reveal><div class="container"><div class="section-heading"><div class="eyebrow">05 / toolkit</div><h2>Tools I reach for deliberately.</h2><p>No progress bars. Context, constraints, and the right abstraction beat a decorative percentage.</p></div><div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{groups.map(([group, items]) => <article class="card p-5"><h3 class="mono text-xs uppercase tracking-wider text-[var(--accent)]">{group}</h3><div class="mt-4 flex flex-wrap gap-2">{items.map((item) => <span class="rounded-md border border-[var(--line)] px-2.5 py-1.5 text-sm text-[var(--muted)]">{item}</span>)}</div></article>)}</div></div></section>
+<section id="skills" class="section" data-reveal><div class="container"><div class="section-heading"><div class="eyebrow">05 / toolkit</div><h2>Tools I reach for deliberately.</h2><p>No progress bars. Context, constraints, and the right abstraction beat a decorative percentage.</p></div>{coreSkills?.length > 0 && <div class="core-skills md:hidden"><div class="flex flex-wrap gap-2">{coreSkills.map((skill) => <span class="rounded-md border border-[var(--line)] px-2.5 py-1.5 text-sm text-[var(--muted)]">{skill}</span>)}</div><button type="button" class="skills-toggle btn btn-ghost mt-4 hidden min-h-[44px] px-3 py-2 text-sm md:hidden" aria-expanded="false">Show all skills</button></div>}<div class="skills-full md:block"><div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{groups.map(([group, items]) => <article class="card p-5"><h3 class="mono text-xs uppercase tracking-wider text-[var(--accent)]">{group}</h3><div class="mt-4 flex flex-wrap gap-2">{items.map((item) => <span class="rounded-md border border-[var(--line)] px-2.5 py-1.5 text-sm text-[var(--muted)]">{item}</span>)}</div></article>)}</div></div></div></section>
+<script is:inline>
+  document.documentElement.classList.add('js');
+	const skillsFull = document.querySelector('.skills-full');
+  skillsFull?.classList.add('hidden');
+  document.querySelectorAll('.skills-toggle').forEach((button) => {
+	button.classList.remove('hidden');
+	button.addEventListener('click', () => {
+		const target = button.closest('.core-skills')?.nextElementSibling;
+	  if (!target) return;
+	  const expanded = button.getAttribute('aria-expanded') === 'true';
+	  target.classList.toggle('hidden', expanded);
+	  button.setAttribute('aria-expanded', String(!expanded));
+	  button.textContent = expanded ? 'Show all skills' : 'Show fewer skills';
+	});
+  });
+</script>

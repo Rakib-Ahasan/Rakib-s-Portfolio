@@ -1,0 +1,17 @@
+---
+const { writing = [] } = Astro.props;
+---
+{writing.length > 0 && <section id="writing" class="section" data-reveal>
+  <div class="container">
+	<div class="section-heading">
+	  <div class="eyebrow">08 / writing</div>
+	  <h2>Writing and notes.</h2>
+	</div>
+	<div class="grid gap-4 md:grid-cols-2">
+	  {writing.map((item) => <a class="card card-hover p-5" href={item.url} target="_blank" rel="noopener noreferrer">
+		<h3 class="text-xl font-semibold tracking-tight">{item.title}</h3>
+		<p class="mono mt-3 text-xs uppercase tracking-wider text-[var(--accent)]">{item.platform}</p>
+	  </a>)}
+	</div>
+  </div>
+</section>}
